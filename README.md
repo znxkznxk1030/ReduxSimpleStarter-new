@@ -44,8 +44,18 @@ React.createElement(App, null);
 
 #### 마지막에 렌더는 React가 아니라 ReactDOM을 이용한다.
 
-``` javascript
-import { ReactDOM } from "react";
+```jsx
+import ReactDOM from "react-dom";
 
-ReactDOM.render(<App/>)   
+ReactDOM.render( < App /> )
+```
+
+### Day - 2
+
+* 타겟 렌더링
+
+```jsx
+import ReactDOM from "react-dom";
+
+ReactDOM.render( < App /> , /* 타겟 */ document.querySelector('.container'));
 ```
