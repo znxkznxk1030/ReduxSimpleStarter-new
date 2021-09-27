@@ -59,3 +59,24 @@ import ReactDOM from "react-dom";
 
 ReactDOM.render( < App /> , /* 타겟 */ document.querySelector('.container'));
 ```
+
+* 구글 API 콘솔
+
+> https://console.cloud.google.com/home/dashboard?project=friendlychat-9446c
+
+* export 가능한거는 이름있는 값이나 default ( * 하기와 같은 문장은 안된다. *)
+
+```javascript
+// error
+export {
+    key: 'value'
+}
+```
+
+* jsx가 간략화 하더라도 React를 임포트는 시켜야한다.
+
+```jsx
+import React from 'react'
+
+<input /> // React.createElement('input', null);
+```
