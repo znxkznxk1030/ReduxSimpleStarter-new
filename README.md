@@ -80,3 +80,39 @@ import React from 'react'
 
 <input /> // React.createElement('input', null);
 ```
+
+### Day - 3
+
+* 클래스 컴포넌트는 내부적인 정보를 저장하려고 할 때 사용한다.
+
+* import시 default 와 destructure 동시에 하기
+
+```jsx
+import React, {
+    Component
+} from 'react'
+```
+
+* jsx에서 html 내장 이벤트 핸들링 하기
+
+> on + {EventName}
+
+```jsx
+<input onChange={ console.log } onClick={ console.log } />
+```
+
+* 모든 컴포넌트는 상태가 있고, 상태가 변하면 자신과 자식들의 render를 강제한다.
+
+```jsx
+class SearchBar extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = { term: '' }
+    }
+
+    render() {
+        return <input onChange={event => console.log(event.target.value)} />
+    }
+}
+```
