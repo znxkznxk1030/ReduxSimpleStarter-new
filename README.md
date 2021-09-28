@@ -104,15 +104,30 @@ import React, {
 * 모든 컴포넌트는 상태가 있고, 상태가 변하면 자신과 자식들의 render를 강제한다.
 
 ```jsx
-class SearchBar extends Component {
+render() {
+        return (
+            <div>
+                <input onChange={event => this.setState({ term: event.target.value })} />
+                <br />
+                Value of the input: {this.state.term}
+            </div>
+        )
+    }
+```
 
-    constructor(props) {
+* 상태 선언시 반드시 constructor안에서 해야한다
+
+```jsx
+constructor(props) {
         super(props)
         this.state = { term: '' }
     }
+```
 
-    render() {
-        return <input onChange={event => console.log(event.target.value)} />
+* 상태 변경시 반드시 this.setState를 이용해야 한다.
+
+```jsx
+ render() {
+        return <input onChange={event => this.setState({ term: event.target.value })} />
     }
-}
 ```
