@@ -57,7 +57,7 @@ ReactDOM.render( < App /> )
 ```jsx
 import ReactDOM from "react-dom";
 
-ReactDOM.render( < App /> , /#### 타겟 */ document.querySelector('.container'));
+ReactDOM.render( < App /> , /* 타겟 */ document.querySelector('.container'));
 ```
 
 #### 구글 API 콘솔
@@ -164,4 +164,13 @@ const VideoList = (props) => {
       {props.videos.length}
     </ul>;
 };
+```
+#### react for문
+- key값을 누락하면 난리치니 조심하자
+``` jsx
+const videoItems = props.videos.map((video) => {
+    return <VideoListItem key={video.etag} video={video} />;
+  });
+  
+  return <ul className="col-md-4 list-group">{videoItems}</ul>;
 ```
