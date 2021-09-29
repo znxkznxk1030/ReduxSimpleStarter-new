@@ -18,7 +18,7 @@ React.createElement('div', null, 'Hi')
 
 #### jsx에서 App 인스턴스화 시키기
 
-* jsx 에서 아래와 같이만 선언하면
+#### jsx 에서 아래와 같이만 선언하면
 
 ```javascript
 const App = function() {
@@ -29,7 +29,7 @@ const App = function() {
     App / >
 ```
 
-* javascipt에서 다음과 같다
+#### javascipt에서 다음과 같다
 
 ```javascript
 "use strict";
@@ -52,19 +52,19 @@ ReactDOM.render( < App /> )
 
 ### Day - 2
 
-* 타겟 렌더링
+#### 타겟 렌더링
 
 ```jsx
 import ReactDOM from "react-dom";
 
-ReactDOM.render( < App /> , /* 타겟 */ document.querySelector('.container'));
+ReactDOM.render( < App /> , /#### 타겟 */ document.querySelector('.container'));
 ```
 
-* 구글 API 콘솔
+#### 구글 API 콘솔
 
 > https://console.cloud.google.com/home/dashboard?project=friendlychat-9446c
 
-* export 가능한거는 이름있는 값이나 default ( * 하기와 같은 문장은 안된다. *)
+#### export 가능한거는 이름있는 값이나 default ( #### 하기와 같은 문장은 안된다. *)
 
 ```javascript
 // error
@@ -73,7 +73,7 @@ export {
 }
 ```
 
-* jsx가 간략화 하더라도 React를 임포트는 시켜야한다.
+#### jsx가 간략화 하더라도 React를 임포트는 시켜야한다.
 
 ```jsx
 import React from 'react'
@@ -83,9 +83,9 @@ import React from 'react'
 
 ### Day - 3
 
-* 클래스 컴포넌트는 내부적인 정보를 저장하려고 할 때 사용한다.
+#### 클래스 컴포넌트는 내부적인 정보를 저장하려고 할 때 사용한다.
 
-* import시 default 와 destructure 동시에 하기
+#### import시 default 와 destructure 동시에 하기
 
 ```jsx
 import React, {
@@ -93,7 +93,7 @@ import React, {
 } from 'react'
 ```
 
-* jsx에서 html 내장 이벤트 핸들링 하기
+#### jsx에서 html 내장 이벤트 핸들링 하기
 
 > on + {EventName}
 
@@ -101,7 +101,7 @@ import React, {
 <input onChange={ console.log } onClick={ console.log } />
 ```
 
-* 모든 컴포넌트는 상태가 있고, 상태가 변하면 자신과 자식들의 render를 강제한다.
+#### 모든 컴포넌트는 상태가 있고, 상태가 변하면 자신과 자식들의 render를 강제한다.
 
 ```jsx
 render() {
@@ -115,7 +115,7 @@ render() {
     }
 ```
 
-* 상태 선언시 반드시 constructor안에서 해야한다
+#### 상태 선언시 반드시 constructor안에서 해야한다
 
 ```jsx
 constructor(props) {
@@ -124,7 +124,7 @@ constructor(props) {
     }
 ```
 
-* 상태 변경시 반드시 this.setState를 이용해야 한다.
+#### 상태 변경시 반드시 this.setState를 이용해야 한다.
 
 ```jsx
  render() {
@@ -134,9 +134,9 @@ constructor(props) {
 
 ### Day - 4
 
-* 대부분의 경우 정보와 연관되어 있는 부모 컴포넌트가 이를 가져올 권리를 가지고 있다.
+#### 대부분의 경우 정보와 연관되어 있는 부모 컴포넌트가 이를 가져올 권리를 가지고 있다.
 
-* Prettier 적용
+#### Prettier 적용
 
 .pritterrc 추가
 
@@ -148,4 +148,20 @@ package.json 에 스크립트 추가
 
 ```json
 "format": "prettier \"src/**/*.{js,html,jsx}\" --write"
+```
+
+#### props 넘기기
+
+```jsx
+<VideoList videos={this.state.videos}></VideoList>
+```
+
+#### props 받기 ( 함수형 )
+
+```jsx
+const VideoList = (props) => {
+  return <ul className="col-md-4 list-group">
+      {props.videos.length}
+    </ul>;
+};
 ```
