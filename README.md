@@ -131,3 +131,21 @@ constructor(props) {
         return <input onChange={event => this.setState({ term: event.target.value })} />
     }
 ```
+
+### Day - 4
+
+* 대부분의 경우 정보와 연관되어 있는 부모 컴포넌트가 이를 가져올 권리를 가지고 있다.
+
+* Prettier 적용
+
+.pritterrc 추가
+
+```json
+{}
+```
+
+package.json 에 스크립트 추가
+
+```json
+"format": "prettier \"src/**/*.{js,html,jsx}\" --write"
+```
