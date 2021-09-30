@@ -200,3 +200,31 @@ const VideoDetail = ({video}) => {
 ></iframe>
 ```
 
+#### props의 null/undefined 값 처리
+
+```jsx
+  if (!video) {
+      return <div>Loading...</div>
+  }
+```
+
+#### embed된 요소의 좋은 ratio 16:9 ( bootstrap 피셜 )
+```jsx
+      <div className="embed-responsive embed-responsive-16by9">
+        <iframe
+          src={url}
+          className="embed-responsive-item"
+        ></iframe>
+      </div>
+```
+
+그외
+
+```scss
+$embed-responsive-aspect-ratios: (
+  (21 9),
+  (16 9),
+  (4 3),
+  (1 1)
+) !default;
+```
