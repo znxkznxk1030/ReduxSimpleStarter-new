@@ -165,12 +165,38 @@ const VideoList = (props) => {
     </ul>;
 };
 ```
+
 #### react for문
-- key값을 누락하면 난리치니 조심하자
-``` jsx
+
+* key값을 누락하면 난리치니 조심하자
+
+```jsx
 const videoItems = props.videos.map((video) => {
     return <VideoListItem key={video.etag} video={video} />;
   });
   
   return <ul className="col-md-4 list-group">{videoItems}</ul>;
 ```
+
+### Day - 5
+
+#### jsx 에선 class대신 반드시 className이라고 사용
+
+#### decontructor로 props분해
+
+```jsx
+const VideoDetail = ({video}) => {
+    
+}
+```
+
+#### iframe의 src같은 native 속성들도 사용가능
+
+```jsx
+<iframe
+  src={url}
+  frameborder="0"
+  className="embed-responsive-item"
+></iframe>
+```
+
