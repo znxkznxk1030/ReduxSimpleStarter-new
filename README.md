@@ -273,3 +273,11 @@ videoSearch(term) {
 />
 
 ```
+
+#### debounce 적용하기
+
+```javascript
+const videoSearch = _.debounce((term) => {
+    this.videoSearch(term)
+}, 300)
+```
