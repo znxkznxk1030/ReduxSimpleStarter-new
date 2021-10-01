@@ -209,6 +209,7 @@ const VideoDetail = ({video}) => {
 ```
 
 #### embed된 요소의 좋은 ratio 16:9 ( bootstrap 피셜 )
+
 ```jsx
       <div className="embed-responsive embed-responsive-16by9">
         <iframe
@@ -227,4 +228,21 @@ $embed-responsive-aspect-ratios: (
   (4 3),
   (1 1)
 ) !default;
+```
+
+### Day - 6
+
+#### 자식 이벤트 받기 - props로 콜백 함수 넘겨준다
+
+```jsx
+// parent
+<VideoList
+onVideoSelect={video => this.setState({ selectedVideo: video })} />
+
+// child - 1
+
+<VideoListItem onVideoSelect={props.onVideoSelect} />;
+
+// child - 2 ( emit )
+<li onClick={() => onVideoSelect(video)} className="list-group-item">
 ```
