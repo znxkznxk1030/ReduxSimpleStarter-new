@@ -246,3 +246,30 @@ onVideoSelect={video => this.setState({ selectedVideo: video })} />
 // child - 2 ( emit )
 <li onClick={() => onVideoSelect(video)} className="list-group-item">
 ```
+
+```jsx
+// parent
+videoSearch(term) {
+    YTSearch({ key: API_KEY, term }, (videos) => {
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+      });
+    });
+  }
+
+ <SearchBar onSearchTermChange={term => this.videoSearch(term)} />
+
+// child ( emit )
+  onInputChange(term) {
+    this.setState({ term })
+    this.props.onSearchTermChange(term)
+
+  }
+
+<input
+  value={this.state.term}
+  onChange={(event) => this.onInputChange(event.target.value)}
+/>
+
+```
